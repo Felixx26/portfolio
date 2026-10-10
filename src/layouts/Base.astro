@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { contact, t, type Lang } from '../i18n/profile';
+import SpeedInsights from "@vercel/speed-insights/astro"
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -29,6 +30,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      function speedInsightsBeforeSend(data){
+        console.log("Speed Insights before send", data)
+        return data;
+      }
+    </script>
+    <SpeedInsights />
   </head>
   <body>
     <header class="nav">
