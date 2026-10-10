@@ -1,0 +1,34 @@
+# Dependencias
+node_modules/
+
+# Builds y caché de Astro
+dist/
+.astro/
+
+# Variables de entorno (pueden contener claves)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Vercel
+.vercel/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Claude Code: ajustes personales de esta máquina
+.claude/settings.local.json
+
+# Notas privadas
+docs/PROJECT_IDEAS.md

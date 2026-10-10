@@ -1,0 +1,79 @@
+:root {
+  --bg: #0e0f0c;
+  --surface: #16180f;
+  --line: #2a2d22;
+  --text: #ecebe4;
+  --muted: #9a9a8c;
+  --accent: #c6f25d;
+  --accent-ink: #0e0f0c;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --max: 1080px;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f5ef;
+    --surface: #ffffff;
+    --line: #dddbcf;
+    --text: #17180f;
+    --muted: #63634f;
+    --accent: #3d6b00;
+    --accent-ink: #ffffff;
+    color-scheme: light;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+.eyebrow {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+section { padding: 88px 0; border-top: 1px solid var(--line); }
+.section-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px; }
+.section-head .num { font: 500 13px var(--mono); color: var(--accent); }
+.section-head h2 { font: 500 clamp(28px, 4vw, 40px)/1.1 var(--serif); letter-spacing: -.01em; }
+
+.tag {
+  display: inline-block;
+  font: 12px/1 var(--mono);
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 14px var(--sans);
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  transition: transform .15s, background .15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
